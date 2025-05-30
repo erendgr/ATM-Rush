@@ -60,12 +60,11 @@ namespace Runtime.Managers
             CoreGameSignals.Instance.onLevelFailed +=
                 () => PlayerSignals.Instance.onPlayConditionChanged?.Invoke(false);
             CoreGameSignals.Instance.onReset += OnReset;
-
+            
             PlayerSignals.Instance.onSetTotalScore += OnSetTotalScore;
             CoreGameSignals.Instance.onMiniGameEntered += OnMiniGameEntered;
         }
-
-
+        
         private void OnPlay()
         {
             PlayerSignals.Instance.onPlayConditionChanged?.Invoke(true);
