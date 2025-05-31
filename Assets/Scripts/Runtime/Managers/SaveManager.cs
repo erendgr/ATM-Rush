@@ -32,12 +32,11 @@ namespace Runtime.Managers
 
         private void SaveData()
         {
-            Debug.LogWarning(ScoreSignals.Instance.onGetMoney());
             OnSaveGame(
                 new SaveGameDataParams()
                 {
                     Money = ScoreSignals.Instance.onGetMoney(),
-                    Level = CoreGameSignals.Instance.onGetLevelID(),
+                    Level = CoreGameSignals.Instance.onGetCurrentLevel(),
                     IncomeLevel = CoreGameSignals.Instance.onGetIncomeLevel(),
                     StackLevel = CoreGameSignals.Instance.onGetStackLevel()
                 }

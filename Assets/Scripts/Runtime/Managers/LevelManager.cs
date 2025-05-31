@@ -53,6 +53,7 @@ namespace Runtime.Managers
             CoreGameSignals.Instance.onGetLevelID += GetLevelID;
             CoreGameSignals.Instance.onNextLevel += OnNextLevel;
             CoreGameSignals.Instance.onRestartLevel += OnRestartLevel;
+            CoreGameSignals.Instance.onGetCurrentLevel += () => _currentLevel;
         }
 
         private void UnsubscribeEvents()
@@ -62,6 +63,7 @@ namespace Runtime.Managers
             CoreGameSignals.Instance.onGetLevelID -= GetLevelID;
             CoreGameSignals.Instance.onNextLevel -= OnNextLevel;
             CoreGameSignals.Instance.onRestartLevel -= OnRestartLevel;
+            CoreGameSignals.Instance.onGetCurrentLevel -= () => _currentLevel;
         }
 
         private void OnDisable()
@@ -82,7 +84,8 @@ namespace Runtime.Managers
             _currentLevel++;
             SaveSignals.Instance.onSaveGameData?.Invoke();
             CoreGameSignals.Instance.onClearActiveLevel?.Invoke();
-            CoreGameSignals.Instance.onLevelInitialize?.Invoke(GetLevelID());
+            CoreGameSignals.Instance.onLevelInitialize?.Invoke(_currentLevel);
+            CoreGameSignals.Instance.onGetLevelID?.Invoke();
         }
 
         private void OnRestartLevel()

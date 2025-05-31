@@ -92,7 +92,7 @@ namespace Runtime.Managers
         private int GetMoneyValue()
         {
             if (!ES3.FileExists()) return 0;
-            return (int)(ES3.KeyExists("Money") ? ES3.Load<int>("Money") : 0);
+            return (ES3.KeyExists("Money") ? ES3.Load<int>("Money") : 0);
         }
 
         private void RefreshMoney()
