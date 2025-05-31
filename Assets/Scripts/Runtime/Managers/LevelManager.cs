@@ -70,15 +70,13 @@ namespace Runtime.Managers
         {
             UnsubscribeEvents();
         }
-
-
+        
         private byte GetLevelID()
         {
             if (!ES3.FileExists()) return 0;
             return (byte)(ES3.KeyExists("Level") ? ES3.Load<int>("Level") % totalLevelCount : 0);
         }
-
-
+        
         private void OnNextLevel()
         {
             _currentLevel++;

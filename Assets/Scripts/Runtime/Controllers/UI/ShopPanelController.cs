@@ -12,8 +12,8 @@ namespace Runtime.Controllers.UI
 
         #region Serialized Variables
 
-        [SerializeField] private TextMeshProUGUI incomeLvlText;
         [SerializeField] private Button incomeLvlButton;
+        [SerializeField] private TextMeshProUGUI incomeLvlText;
         [SerializeField] private TextMeshProUGUI incomeValue;
         [SerializeField] private Button stackLvlButton;
         [SerializeField] private TextMeshProUGUI stackLvlText;

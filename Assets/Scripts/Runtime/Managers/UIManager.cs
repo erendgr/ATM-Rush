@@ -6,11 +6,17 @@ namespace Runtime.Managers
 {
     public class UIManager : MonoBehaviour
     {
+        private byte _currentIncomeLevel;
+        private byte _currentStackLevel;
+        
         private void OnEnable()
         {
             SubscribeEvents();
 
             OpenStartPanel();
+
+            _currentIncomeLevel = GetIncomeLevel();
+            _currentStackLevel = GetStackLevel();
         }
 
         private void SubscribeEvents()
@@ -19,6 +25,20 @@ namespace Runtime.Managers
             CoreGameSignals.Instance.onLevelFailed += OnLevelFailed;
             CoreGameSignals.Instance.onLevelSuccessful += OnLevelSuccessful;
             CoreGameSignals.Instance.onReset += OnReset;
+            CoreGameSignals.Instance.onGetIncomeLevel += () => _currentIncomeLevel;
+            CoreGameSignals.Instance.onGetStackLevel += () => _currentStackLevel;
+        }
+        
+        private byte GetIncomeLevel()
+        {
+            if (!ES3.FileExists()) return 0;
+            return (byte)(ES3.KeyExists("IncomeLevel") ? ES3.Load<int>("IncomeLevel") : 1);
+        }
+        
+        private byte GetStackLevel()
+        {
+            if (!ES3.FileExists()) return 0;
+            return (byte)(ES3.KeyExists("StackLevel") ? ES3.Load<int>("StackLevel") : 1);
         }
 
         private void OpenStartPanel()
@@ -79,12 +99,14 @@ namespace Runtime.Managers
 
         public void OnIncomeUpdate()
         {
+            _currentIncomeLevel++;
             UISignals.Instance.onClickIncome?.Invoke();
             UISignals.Instance.onSetIncomeLvlText?.Invoke();
         }
 
         public void OnStackUpdate()
         {
+            _currentStackLevel++;
             UISignals.Instance.onClickStack?.Invoke();
             UISignals.Instance.onSetStackLvlText?.Invoke();
         }
@@ -100,6 +122,8 @@ namespace Runtime.Managers
             CoreGameSignals.Instance.onLevelFailed -= OnLevelFailed;
             CoreGameSignals.Instance.onLevelSuccessful -= OnLevelSuccessful;
             CoreGameSignals.Instance.onReset -= OnReset;
+            CoreGameSignals.Instance.onGetIncomeLevel -= () => _currentIncomeLevel;
+            CoreGameSignals.Instance.onGetStackLevel -= () => _currentStackLevel;
         }
 
 

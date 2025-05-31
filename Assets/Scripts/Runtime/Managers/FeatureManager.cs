@@ -46,19 +46,12 @@ namespace Runtime.Managers
         {
             UISignals.Instance.onClickIncome += _onClickIncomeCommand.Execute;
             UISignals.Instance.onClickStack += _onClickStackCommand.Execute;
-            CoreGameSignals.Instance.onGetIncomeLevel += OnGetIncomeLevel;
-            CoreGameSignals.Instance.onGetStackLevel += OnGetStackLevel;
         }
-
-        private byte OnGetIncomeLevel() => _incomeLevel;
-        private byte OnGetStackLevel() => _stackLevel;
 
         private void UnSubscription()
         {
             UISignals.Instance.onClickIncome -= _onClickIncomeCommand.Execute;
             UISignals.Instance.onClickStack -= _onClickStackCommand.Execute;
-            CoreGameSignals.Instance.onGetIncomeLevel -= OnGetIncomeLevel;
-            CoreGameSignals.Instance.onGetStackLevel -= OnGetStackLevel;
         }
 
         private void OnDisable()

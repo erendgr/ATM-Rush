@@ -19,11 +19,11 @@ namespace Runtime.Commands.Feature
 
         internal void Execute()
         {
-            _newPriceTag = (int)(CoreGameSignals.Instance.onGetIncomeLevel() -
-                                 ((Mathf.Pow(2, Mathf.Clamp(_incomeLevel, 0, 10)) * 100)));
+            _newPriceTag = (int)(ScoreSignals.Instance.onGetMoney() -
+                                 (Mathf.Pow(2, Mathf.Clamp(_incomeLevel, 0, 10)) * 100));
             _incomeLevel += 1;
-            ScoreSignals.Instance.onSendMoney?.Invoke((int)_newPriceTag);
-            UISignals.Instance.onSetMoneyValue?.Invoke((int)_newPriceTag);
+            ScoreSignals.Instance.onSendMoney?.Invoke(_newPriceTag);
+            UISignals.Instance.onSetMoneyValue?.Invoke(_newPriceTag);
             _featureManager.SaveFeatureData();
         }
     }

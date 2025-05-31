@@ -19,7 +19,7 @@ namespace Runtime.Commands.Feature
 
         internal void Execute()
         {
-            _newPriceTag = (int)(CoreGameSignals.Instance.onGetStackLevel() -
+            _newPriceTag = (int)(ScoreSignals.Instance.onGetMoney() -
                                  ((Mathf.Pow(2, Mathf.Clamp(_stackLevel, 0, 10)) * 100)));
             _stackLevel += 1;
             ScoreSignals.Instance.onSendMoney?.Invoke((int)_newPriceTag);
