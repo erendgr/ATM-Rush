@@ -135,7 +135,7 @@ namespace Runtime.Managers
             for (int i = 1; i < wallCount; i++)
             {
                 transform.GetChild(i).GetComponent<Renderer>().material = mat;
-                transform.GetChild(i).transform.position = Vector3.zero;
+                transform.GetChild(i).transform.DOLocalMoveZ(0, 0);
             }
         }
 
