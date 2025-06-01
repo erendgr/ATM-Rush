@@ -12,17 +12,13 @@ namespace Runtime.Managers
 
         public FeatureManager()
         {
-            _onClickIncomeCommand = new OnClickIncomeCommand(this, ref _newPriceTag, ref _incomeLevel);
-            _onClickStackCommand = new OnClickStackCommand(this, ref _newPriceTag, ref _stackLevel);
+            _onClickIncomeCommand = new OnClickIncomeCommand(this);
+            _onClickStackCommand = new OnClickStackCommand(this);
         }
 
         #endregion
 
         #region Private Variables
-
-        private byte _incomeLevel = 1;
-        private byte _stackLevel = 1;
-        private int _newPriceTag;
 
         private readonly OnClickIncomeCommand _onClickIncomeCommand;
         private readonly OnClickStackCommand _onClickStackCommand;
@@ -30,12 +26,6 @@ namespace Runtime.Managers
         #endregion
 
         #endregion
-
-        private void Awake()
-        {
-            _incomeLevel = LoadIncomeData();
-            _stackLevel = LoadStackData();
-        }
 
         private void OnEnable()
         {
@@ -57,18 +47,6 @@ namespace Runtime.Managers
         private void OnDisable()
         {
             UnSubscription();
-        }
-
-        private byte LoadIncomeData()
-        {
-            if (!ES3.FileExists()) return 1;
-            return (byte)(ES3.KeyExists("IncomeLevel") ? ES3.Load<int>("IncomeLevel") : 1);
-        }
-
-        private byte LoadStackData()
-        {
-            if (!ES3.FileExists()) return 1;
-            return (byte)(ES3.KeyExists("StackLevel") ? ES3.Load<int>("StackLevel") : 1);
         }
 
         internal void SaveFeatureData()

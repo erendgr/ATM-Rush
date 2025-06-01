@@ -496,7 +496,7 @@ GameObject:
   - component: {fileID: 4189362926838653220}
   - component: {fileID: 4965984337339799186}
   - component: {fileID: 402140957634543877}
-  - component: {fileID: 6009217835404383259}
+  - component: {fileID: 3703147868850347509}
   m_Layer: 0
   m_Name: StackLevel
   m_TagString: Untagged
@@ -606,7 +606,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &6009217835404383259
+--- !u!114 &3703147868850347509
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -632,7 +632,7 @@ GameObject:
   - component: {fileID: 7441963968218040424}
   - component: {fileID: 6336034993792496579}
   - component: {fileID: 1098159689905605676}
-  - component: {fileID: 5659968363369794618}
+  - component: {fileID: 6531264386526780944}
   m_Layer: 0
   m_Name: IncomeLevel
   m_TagString: Untagged
@@ -742,7 +742,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &5659968363369794618
+--- !u!114 &6531264386526780944
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -765,7 +765,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3684427061840890318}
-  - component: {fileID: 1718614726273677960}
+  - component: {fileID: 1737888521202741842}
   m_Layer: 0
   m_Name: ShopPanel
   m_TagString: Untagged
@@ -794,7 +794,7 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1718614726273677960
+--- !u!114 &1737888521202741842
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -806,8 +806,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d019c17563e54bdda48343620b712c3a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  incomeLvlText: {fileID: 6485000505057256306}
   incomeLvlButton: {fileID: 1098159689905605676}
+  incomeLvlText: {fileID: 6485000505057256306}
   incomeValue: {fileID: 1512181255386147202}
   stackLvlButton: {fileID: 402140957634543877}
   stackLvlText: {fileID: 2233160105863224289}
