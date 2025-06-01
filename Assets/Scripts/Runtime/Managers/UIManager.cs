@@ -83,8 +83,10 @@ namespace Runtime.Managers
 
         public void OnRestartLevel()
         {
+            var money = ScoreSignals.Instance.onGetMoney();
             CoreGameSignals.Instance.onRestartLevel?.Invoke();
             CoreGameSignals.Instance.onReset?.Invoke();
+            UISignals.Instance.onSetMoneyValue?.Invoke(money);
         }
 
         private void OnLevelFailed()
@@ -125,8 +127,7 @@ namespace Runtime.Managers
             CoreGameSignals.Instance.onGetIncomeLevel -= () => _currentIncomeLevel;
             CoreGameSignals.Instance.onGetStackLevel -= () => _currentStackLevel;
         }
-
-
+        
         private void OnReset()
         {
             //CoreUISignals.Instance.onCloseAllPanels?.Invoke();

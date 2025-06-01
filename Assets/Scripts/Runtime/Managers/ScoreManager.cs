@@ -39,6 +39,7 @@ namespace Runtime.Managers
             CoreGameSignals.Instance.onReset += OnReset;
             CoreGameSignals.Instance.onLevelSuccessful += RefreshMoney;
             CoreGameSignals.Instance.onLevelFailed += RefreshMoney;
+            //CoreGameSignals.Instance.onLevelInitialize += RefreshMoney;
             UISignals.Instance.onClickIncome += OnSetValueMultiplier;
         }
 

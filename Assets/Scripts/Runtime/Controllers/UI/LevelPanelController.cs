@@ -1,7 +1,6 @@
 using Runtime.Signals;
 using TMPro;
 using UnityEngine;
-using UnityEngine.SocialPlatforms.Impl;
 
 namespace Runtime.Controllers.UI
 {
@@ -35,11 +34,6 @@ namespace Runtime.Controllers.UI
             UISignals.Instance.onGetMoneyValue += OnGetMoneyValue;
         }
 
-        private int OnGetMoneyValue()
-        {
-            return _moneyValue;
-        }
-
         private void OnSetNewLevelValue(byte levelValue)
         {
             levelText.text = "LEVEL " + ++levelValue;
@@ -49,6 +43,11 @@ namespace Runtime.Controllers.UI
         {
             _moneyValue = moneyValue;
             moneyText.text = moneyValue.ToString();
+        }
+
+        private int OnGetMoneyValue()
+        {
+            return _moneyValue;
         }
 
         private void UnsubscribeEvents()
