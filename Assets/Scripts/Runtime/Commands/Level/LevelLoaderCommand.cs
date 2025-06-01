@@ -24,7 +24,6 @@ namespace Runtime.Commands.Level
                 var newLevel = Object.Instantiate(resourceRequest.asset.GameObject(),
                     Vector3.zero, Quaternion.identity);
                 if (newLevel != null) newLevel.transform.SetParent(_levelManager.levelHolder.transform);
-                CameraSignals.Instance.onSetCinemachineTarget?.Invoke(CameraTargetState.Player);
             };
         }
     }

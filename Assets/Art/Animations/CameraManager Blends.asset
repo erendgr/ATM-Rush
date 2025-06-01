@@ -13,22 +13,22 @@ MonoBehaviour:
   m_Name: CameraManager Blends
   m_EditorClassIdentifier: 
   CustomBlends:
-  - From: MiniGame Camera
-    To: Initial Camera
+  - From: MiniGameCamera
+    To: InitializeCamera
     Blend:
-      Style: 3
-      Time: 1
+      Style: 0
+      Time: 2
       CustomCurve:
         serializedVersion: 2
         m_Curve: []
         m_PreInfinity: 0
         m_PostInfinity: 0
         m_RotationOrder: 4
-  - From: Follow Camera
-    To: Initial Camera
+  - From: PlayerCamera
+    To: InitializeCamera
     Blend:
-      Style: 3
-      Time: 1
+      Style: 0
+      Time: 2
       CustomCurve:
         serializedVersion: 2
         m_Curve: []
