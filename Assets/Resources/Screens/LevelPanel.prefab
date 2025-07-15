@@ -50,7 +50,7 @@ GameObject:
   - component: {fileID: 9080222968046875671}
   - component: {fileID: 381955777212082931}
   - component: {fileID: 1238785492431615146}
-  - component: {fileID: 8469423534964787291}
+  - component: {fileID: 4662103368539386991}
   m_Layer: 0
   m_Name: Reset
   m_TagString: Untagged
@@ -160,7 +160,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &8469423534964787291
+--- !u!114 &4662103368539386991
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -394,7 +394,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1063069519009266611}
-  - component: {fileID: 1097068714383632648}
+  - component: {fileID: 1095566797320295048}
   m_Layer: 0
   m_Name: LevelPanel
   m_TagString: Untagged
@@ -424,7 +424,7 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1097068714383632648
+--- !u!114 &1095566797320295048
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

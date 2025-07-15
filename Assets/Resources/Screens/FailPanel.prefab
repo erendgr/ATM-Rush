@@ -201,7 +201,7 @@ GameObject:
   - component: {fileID: 8851619611957110776}
   - component: {fileID: 6928128553758701075}
   - component: {fileID: 4411727518225088757}
-  - component: {fileID: 1100541360074156172}
+  - component: {fileID: 161888235003169117}
   m_Layer: 0
   m_Name: Restart
   m_TagString: Untagged
@@ -311,7 +311,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &1100541360074156172
+--- !u!114 &161888235003169117
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
